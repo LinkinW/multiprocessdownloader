@@ -11,7 +11,7 @@ with open(filepath,'r') as f:
         url = url.rstrip('\n')
         #print(url)
         i=i+1
-        outpath = str(i) + ('.jpg')
+        outpath = '.\downloadfile\' + str(i) + ('.jpg')
         download(url,outpath)
 
 
