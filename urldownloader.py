@@ -5,7 +5,7 @@ from urllib.request import urlretrieve
 from urllib.request import urlopen
 
 def download(url, filename):
-    
+
     def cbk(a,b,c):
         '''
         显示下载进度的函数
@@ -17,9 +17,13 @@ def download(url, filename):
         if per > 100 :
             per = 100
         print('%.2f%%' % per)
-        
-    print('正在下载文件%s'%url)    
-    f = urlretrieve(url,filename,cbk)
+    
+    print('正在下载文件%s'%url)
+    #下载文件
+    try:
+        f = urlretrieve(url,filename,cbk)
+    except:
+        print('%s无效'%url)
     
 
 if __name__ == '__main__':
